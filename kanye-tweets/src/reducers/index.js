@@ -7,7 +7,7 @@ import {
 export const initialState = {
     isFetching: false,
     error: '',
-    quote: null 
+    quote: "Let's be like water",
 }
 
 export const reducer = (state = initialState, action) => {
@@ -17,8 +17,22 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 error: '',
                 isFetching: true,
-                quote: null
-            }
+                quote: '',
+            };
+        case FETCH_TWEET_SUCCESS:
+            return {
+                ...state,
+                quote: action.payload,
+                isFetching: false,
+                error: '',
+            };
+        case FETCH_TWEET_FAILURE:
+            return {
+                ...state,
+                quote: '',
+                isFetching: false,
+                error: action.payload
+            };
         default: 
             return state;
     }

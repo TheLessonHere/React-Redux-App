@@ -19,10 +19,19 @@ const Display = (props) => {
                 />
     }
 
+    if (props.error) {
+        return (
+            <div className="error-display">
+                <h1>{props.error}</h1>
+                <button onClick={newTweet}>Try Again</button>
+            </div>
+        )
+    }
+
     return (
         <div className="tweet-display">
-            {props.quote ? <h1>{props.quote}</h1> : <h1> No Tweet Found</h1>}
-            <button onClick={newTweet}>New Tweet</button>
+            {props.quote ? <h1>{props.quote}</h1> : <h1>No Tweet Found</h1>}
+            <button onClick={newTweet}>Get New Kanye Tweet</button>
         </div>
     )
 };
