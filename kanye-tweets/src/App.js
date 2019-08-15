@@ -1,13 +1,27 @@
 import React from 'react';
 import Display from './components/Display';
+import styled from 'styled-components';
 
-import './App.css';
+const AppContainer = styled.div`
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+`;
+
+const SiteHeader = styled.h1`
+    font-size: 2.5rem;
+`;
 
 function App() {
   return (
-    <div className="App">
+    <AppContainer>
+      <SiteHeader>The Kanye Tweet Sender</SiteHeader>
       <Display />
-    </div>
+    </AppContainer>
   );
 }
 
